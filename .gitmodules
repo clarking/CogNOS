@@ -1,6 +1,6 @@
 [submodule "opensmalltalk-vm"]
 	path = opensmalltalk-vm
-	url = ./opensmalltalk-vm/
+	url = https://github.com/OpenSmalltalk/opensmalltalk-vm
 [submodule "nopsys"]
 	path = nopsys
-	url = ./nopsys
+	url = https://github.com/clarking/nopsys
