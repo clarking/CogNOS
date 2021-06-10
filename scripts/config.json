@@ -1,0 +1,56 @@
+{
+    "base": {
+        "vm_dir" :"opensmalltalk-vm",
+        "image_dir": "image",
+        "nopsys_dir": "nopsys",
+        "scripts_dir": "scripts"
+    },
+    "cog" : {
+        "releases" : "https://api.github.com/repos/OpenSmalltalk/opensmalltalk-vm/releases",
+        "squeak_src" : "http://files.squeak.org/sources_files/SqueakV50.sources.gz",
+        "platform" : "linux64x64",
+        "volume" : "squeak.cog.spur",
+        "squeak_img_src": "http://files.squeak.org/5.3",
+        "base" : "trunk6",
+        "base64":"trunk6-64",
+        "sista64": "trunk6-sista-64"
+    },
+    "artifacts": {
+        "third_party_dir": "third-party",
+        "build_scripts_dir": "$SCRIPTS_DIR/buildScripts",
+        "init_scripts_dir": "$SCRIPTS_DIR/initialize",
+        "st_image_init_scripts_dir": "$SCRIPTS_DIR/smalltalk",
+        "release_scripts_dir": "$SCRIPTS_DIR/releasing"
+    },
+    "deps": [
+        {
+            "name": "Openlib",
+            "dir": "openlibm",
+            "repo_url":"https://github.com/JuliaMath/openlibm",
+            "branch":"master",
+            "target": "opensmalltalk-vm/third-party"
+        },
+        {
+            "name": "OpenSmalltalkVM (Cog)",
+            "dir" : "opensmalltalk-vm",
+            "repo_url" : "https://github.com/OpenSmalltalk/opensmalltalk-vm",
+            "branch":"Cog",
+            "target" :"opensmalltalk-vm"
+        },
+        {
+            "name": "Nopsys",
+            "dir": "nopsys",
+            "repo_url": "https://github.com/clarking/nopsys.git",
+            "branch": "master"
+        }
+    ],
+    "build": {
+        "arch": "64",
+        "headless": "no",
+        "image": "CogNos.image",
+        "dev_image": "BuildCogNos.image",
+        "build_dir": "$NOPSYS_DIR/build",
+        "nopsys_scripts_dir": "$NOPSYS_DIR/scripts"
+    },
+    "hello" : "hello"
+}
